@@ -1,0 +1,280 @@
+{
+  "processed_at": "2026-11-09T23:33:55.027602+00:00",
+  "source": "_reversa_sdd/questions.md",
+  "answers": [
+    {
+      "question": 1,
+      "id": "D-01",
+      "answer": "A visita deve sempre conter uma data futura",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 2,
+      "id": "D-02",
+      "answer": "Manter somente postgresql",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 3,
+      "id": "D-03",
+      "answer": "Sim, sistema só executado em rede local",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 4,
+      "id": "D-05",
+      "answer": "São Paulo - Brasil",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 5,
+      "id": "D-06",
+      "answer": "não tem contrato conhecido",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 6,
+      "id": "RESP-D-07",
+      "answer": "Não",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 7,
+      "id": "D-04",
+      "answer": "Não tem politica de cache",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 8,
+      "id": "VET-D-01",
+      "answer": "Somente essa app consome, em uma refatoração campos desnecessários podem ser apagados",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 9,
+      "id": "VET-D-02",
+      "answer": "Não tem contrato definido",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 10,
+      "id": "VET-D-03",
+      "answer": "ordem alfabética",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 11,
+      "id": "VET-INV-01",
+      "answer": "não precisa preservar dados",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 12,
+      "id": "SIS-D-02",
+      "answer": "Português e Ingles",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 13,
+      "id": "SIS-D-03",
+      "answer": "Página generica de erro sem expor nenhuma informação",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    },
+    {
+      "question": 14,
+      "id": "SIS-D-04",
+      "answer": "Kubernetes e se possível usar docker para desenvolvimento local",
+      "source": "_reversa_sdd/questions.md",
+      "processed_at": "2026-11-09T23:33:55.027602+00:00"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-01",
+      "summary": "Visita sempre deve conter data futura.",
+      "interpretation": "Requisito desejado confirmado; rejeitar data null/vazia e hoje/passado no destino. Padrão amanhã pode continuar na abertura, sem dispensar validação. Omissão que mantém o default não comprova confirmação explícita de data pelo usuário.",
+      "units": [
+        "responsaveis",
+        "sistema"
+      ],
+      "remaining_technical_gaps": "Binding atual e forma exata de entrada omitida ainda não executados.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "D-02",
+      "summary": "Manter somente PostgreSQL.",
+      "interpretation": "Escopo de banco do destino é PostgreSQL; H2/MySQL permanecem evidência histórica, não obrigação futura. Preservar a regra extraída de unicidade por responsável sem assumir necessidade de equivalência MySQL.",
+      "units": [
+        "responsaveis",
+        "veterinarios",
+        "sistema",
+        "modelo"
+      ],
+      "remaining_technical_gaps": "Confirmar tratamento de violação e concorrência no PostgreSQL; nenhum dado foi removido.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "D-03",
+      "summary": "Sistema somente em rede local.",
+      "interpretation": "Contexto de uso em rede local informado pelo usuário. Não inferir autenticação, papéis, ausência de ameaças ou configuração real de ACL/proxy. Aplicar contexto às operações de todas as units.",
+      "units": [
+        "responsaveis",
+        "veterinarios",
+        "sistema"
+      ],
+      "remaining_technical_gaps": "Exposição e restrições concretas de /oups, Actuator e probes no cluster não foram informadas.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "D-05",
+      "summary": "São Paulo, Brasil.",
+      "interpretation": "Adotar America/Sao_Paulo como identificador técnico correspondente ao local informado. Não usar offset UTC fixo nem inferir que JVM atual já está nesse fuso.",
+      "units": [
+        "responsaveis",
+        "sistema"
+      ],
+      "remaining_technical_gaps": "Referência única de dia por requisição não foi decidida; implementação temporal atual não alterada.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "D-06",
+      "summary": "Não há contrato de erro conhecido.",
+      "interpretation": "Confirmada ausência de contrato conhecido pelo usuário. Não impor 404/409 ou body específico como regra existente; definir contrato na evolução se necessário.",
+      "units": [
+        "responsaveis"
+      ],
+      "remaining_technical_gaps": "Status/conteúdo efetivos ainda exigem caracterização quando relevantes.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "RESP-D-07",
+      "summary": "Não preservar filtro ao trocar páginas.",
+      "interpretation": "Resposta Não interpretada para a primeira pergunta direta: filtro não precisa permanecer ativo. Comportamento atual dos links pode ser preservado, sem correção automática.",
+      "units": [
+        "responsaveis"
+      ],
+      "remaining_technical_gaps": "A resposta não define outras mudanças de navegação; interpretação explicitada para futura revisão.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "D-04",
+      "summary": "Não há política de cache.",
+      "interpretation": "Confirmada ausência de política operacional a preservar. Não significa remover cache nem definir TTL=0; manter declaração atual e escolher política em evolução se necessária.",
+      "units": [
+        "veterinarios",
+        "sistema"
+      ],
+      "remaining_technical_gaps": "CacheManager efetivo, capacidade, expiração e invalidação não comprovados.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "VET-D-01",
+      "summary": "Somente a aplicação consome; campos desnecessários podem ser removidos numa refatoração.",
+      "interpretation": "Não há consumidor externo informado. Simplificação de campos é permitida no planejamento de refatoração após verificar uso; nenhum campo concreto foi declarado desnecessário nem removido.",
+      "units": [
+        "veterinarios"
+      ],
+      "remaining_technical_gaps": "Shape completo, campos usados e necessidade de XML não determinados pela resposta.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "VET-D-02",
+      "summary": "Não há contrato de erro definido.",
+      "interpretation": "Não há contrato conhecido a preservar para falhas da consulta; não atribuir status novo como comportamento do legado.",
+      "units": [
+        "veterinarios"
+      ],
+      "remaining_technical_gaps": "Conversão/erros de banco/cache continuam não executados.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "VET-D-03",
+      "summary": "Ordem alfabética.",
+      "interpretation": "Ordenação alfabética passa a ser requisito desejado confirmado para veterinários; é diferença em relação a findAll/PageRequest sem Sort explícito no legado.",
+      "units": [
+        "veterinarios"
+      ],
+      "remaining_technical_gaps": "Campo principal (nome/sobrenome), desempate, collation e consistência entre HTML/body ainda precisam de definição no ciclo de evolução; não inventados.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "VET-INV-01",
+      "summary": "Não é necessário preservar dados.",
+      "interpretation": "Dispensada migração/preservação de dados históricos no destino. Tarefas de migração de domínio deixam de ser obrigatórias; permite planejamento de instalação nova, sem autorização de exclusão de base existente.",
+      "units": [
+        "responsaveis",
+        "veterinarios",
+        "modelo",
+        "sistema"
+      ],
+      "remaining_technical_gaps": "Integridade de novos dados e política para Specialty null continuam dependentes de implementação; dispensa de migração não define tratamento de null.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "SIS-D-02",
+      "summary": "Português e inglês.",
+      "interpretation": "Idiomas requeridos do destino: português e inglês. Outros bundles do legado não são obrigatórios por esta resposta; não removidos. Default inglês do código fica como referência atual, sem escolha nova de default.",
+      "units": [
+        "sistema",
+        "responsaveis",
+        "veterinarios"
+      ],
+      "remaining_technical_gaps": "Fallback, lang inválido, variante regional e duração desejada de preferência não respondidos.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "SIS-D-03",
+      "summary": "Página genérica de erro sem expor informações.",
+      "interpretation": "Requisito desejado confirmado: página genérica sem detalhes internos de exceção/configuração. Override ALWAYS e mensagem demonstrativa dos testes são históricos, não alvo de implantação.",
+      "units": [
+        "sistema",
+        "responsaveis",
+        "veterinarios"
+      ],
+      "remaining_technical_gaps": "Status/código e eventual body de erro da API não foram definidos; detalhes podem ser registrados em logs operacionais apropriados sem serem expostos na página.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "SIS-D-04",
+      "summary": "Kubernetes; Docker local se possível.",
+      "interpretation": "Destino prioritário é Kubernetes. Docker para desenvolvimento local é preferência condicional a viabilidade, não promessa de ambiente pronto ou deploy autorizado.",
+      "units": [
+        "sistema"
+      ],
+      "remaining_technical_gaps": "Imagem/tag/digest, service binding, probes e desenho do ambiente local ainda não validados; suporte nativo não foi exigido.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    },
+    {
+      "id": "TARGET-STACK-01",
+      "summary": "Reescrita em Next.js em monorepo Nx.",
+      "source": "user_conversation",
+      "interpretation": "Stack de destino confirmada; documentação Java/Spring permanece retrato do legado. Traduzir desenho técnico e tarefas antes da implementação.",
+      "units": [
+        "responsaveis",
+        "veterinarios",
+        "modelo",
+        "sistema"
+      ],
+      "remaining_technical_gaps": "Versões, organização apps/libs, responsabilidades de servidor, ORM, contratos, renderização e build/deploy ainda não definidos.",
+      "confidence": "user_confirmed_decision_not_runtime_proof"
+    }
+  ],
+  "repository_reference": {
+    "url": "https://github.com/guilhermeestrela/spring-petclinic",
+    "source": "user_conversation",
+    "remote_verified": false
+  }
+}

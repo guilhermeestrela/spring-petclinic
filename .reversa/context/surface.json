@@ -1,0 +1,198 @@
+{
+  "generated_at": "2026-11-09T21:11:01.954528+00:00",
+  "project_root": "/Users/guilhermedonascimento/Code/spring-petclinic",
+  "languages": [
+    {
+      "name": "Java",
+      "extensions": [
+        ".java"
+      ],
+      "file_count": 50
+    },
+    {
+      "name": "HTML",
+      "extensions": [
+        ".html"
+      ],
+      "file_count": 12
+    },
+    {
+      "name": "SCSS",
+      "extensions": [
+        ".scss"
+      ],
+      "file_count": 4
+    },
+    {
+      "name": "CSS",
+      "extensions": [
+        ".css"
+      ],
+      "file_count": 1
+    },
+    {
+      "name": "SQL",
+      "extensions": [
+        ".sql"
+      ],
+      "file_count": 7
+    },
+    {
+      "name": "Groovy (build)",
+      "extensions": [
+        ".gradle"
+      ],
+      "file_count": 2
+    }
+  ],
+  "primary_language": "Java",
+  "frameworks": [
+    {
+      "name": "Spring Boot",
+      "version": "4.1.0",
+      "source": "pom.xml; build.gradle"
+    },
+    {
+      "name": "Spring MVC",
+      "version": "gerenciada pelo Spring Boot",
+      "source": "pom.xml"
+    },
+    {
+      "name": "Spring Data JPA",
+      "version": "gerenciada pelo Spring Boot",
+      "source": "pom.xml"
+    },
+    {
+      "name": "Thymeleaf",
+      "version": "gerenciada pelo Spring Boot",
+      "source": "pom.xml"
+    },
+    {
+      "name": "Bootstrap",
+      "version": "5.3.8",
+      "source": "pom.xml; build.gradle"
+    }
+  ],
+  "package_manager": "Maven 3.9.16 e Gradle 9.5.1 (wrappers)",
+  "entry_points": [
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+      "type": "app_entry"
+    },
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+      "type": "mvc_controller"
+    },
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+      "type": "mvc_controller"
+    },
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+      "type": "mvc_controller"
+    },
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/system/CrashController.java",
+      "type": "mvc_controller"
+    },
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+      "type": "mvc_controller"
+    },
+    {
+      "path": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+      "type": "mvc_controller"
+    }
+  ],
+  "config_files": [
+    "build.gradle",
+    "pom.xml",
+    "settings.gradle",
+    ".mvn/wrapper/maven-wrapper.properties",
+    "gradle/wrapper/gradle-wrapper.properties",
+    "src/main/resources/application-mysql.properties",
+    "src/main/resources/application-postgres.properties",
+    "src/main/resources/application.properties"
+  ],
+  "ci_cd": [
+    ".github/workflows/deploy-and-test-cluster.yml",
+    ".github/workflows/gradle-build.yml",
+    ".github/workflows/maven-build.yml"
+  ],
+  "docker": {
+    "dockerfile": null,
+    "compose": "docker-compose.yml",
+    "development_dockerfiles": [
+      ".devcontainer/Dockerfile"
+    ],
+    "scope_note": "dockerfile=null significa ausência de Dockerfile de aplicação na raiz; há Dockerfile de desenvolvimento/Gitpod."
+  },
+  "database_hints": [
+    {
+      "path": "src/main/resources/db/h2/data.sql",
+      "type": "sql_seed_or_setup"
+    },
+    {
+      "path": "src/main/resources/db/h2/schema.sql",
+      "type": "sql_schema"
+    },
+    {
+      "path": "src/main/resources/db/mysql/data.sql",
+      "type": "sql_seed_or_setup"
+    },
+    {
+      "path": "src/main/resources/db/mysql/schema.sql",
+      "type": "sql_schema"
+    },
+    {
+      "path": "src/main/resources/db/mysql/user.sql",
+      "type": "sql_seed_or_setup"
+    },
+    {
+      "path": "src/main/resources/db/postgres/data.sql",
+      "type": "sql_seed_or_setup"
+    },
+    {
+      "path": "src/main/resources/db/postgres/schema.sql",
+      "type": "sql_schema"
+    }
+  ],
+  "test_framework": "JUnit Jupiter, Spring Boot Test, Mockito, AssertJ, Testcontainers; JMeter",
+  "test_file_count": 18,
+  "modules": [
+    "owner",
+    "vet",
+    "model",
+    "system"
+  ],
+  "total_files": 133,
+  "counting_scope": "Arquivos físicos, incluindo ocultos; exclui infraestrutura Reversa, .git e saídas de build/cache.",
+  "external_integrations": [
+    {
+      "name": "MySQL",
+      "type": "optional_database",
+      "evidence": "src/main/resources/application-mysql.properties"
+    },
+    {
+      "name": "PostgreSQL",
+      "type": "optional_database",
+      "evidence": "src/main/resources/application-postgres.properties"
+    }
+  ],
+  "organization_suggestion": {
+    "granularity": "module",
+    "rationale": "Os pacotes Java separam domínios owner e vet e componentes compartilhados model e system; controllers estão distribuídos nesses pacotes.",
+    "signals": [
+      {
+        "type": "domain_packages",
+        "evidence": [
+          "src/main/java/org/springframework/samples/petclinic/owner/",
+          "src/main/java/org/springframework/samples/petclinic/vet/",
+          "src/main/java/org/springframework/samples/petclinic/model/",
+          "src/main/java/org/springframework/samples/petclinic/system/"
+        ]
+      }
+    ],
+    "features": []
+  }
+}

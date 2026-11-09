@@ -1,0 +1,1024 @@
+{
+  "generated_at": "2026-11-09T21:22:41.051042+00:00",
+  "modules": [
+    {
+      "name": "owner",
+      "path": "src/main/java/org/springframework/samples/petclinic/owner",
+      "purpose": "Responsáveis, animais, tipos e agendamento de visitas",
+      "primary_files": [
+        "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/OwnerRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetType.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetTypeRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+        "src/main/java/org/springframework/samples/petclinic/owner/package-info.java"
+      ],
+      "functions": [
+        {
+          "name": "Owner.getAddress",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 72,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.setAddress",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 76,
+          "params": [
+            "String address"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.getCity",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 80,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.setCity",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 84,
+          "params": [
+            "String city"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.getTelephone",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 88,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.setTelephone",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 92,
+          "params": [
+            "String telephone"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.getPets",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 96,
+          "params": [],
+          "returns": "List<Pet>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.addPet",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 100,
+          "params": [
+            "Pet pet"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.getPet",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 120,
+          "params": [
+            "String name"
+          ],
+          "returns": "Pet",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.getPet",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 129,
+          "params": [
+            "Integer id"
+          ],
+          "returns": "Pet",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.getPet",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 147,
+          "params": [
+            "String name",
+            "boolean ignoreNew"
+          ],
+          "returns": "Pet",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.toString",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 160,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Owner.addVisit",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Owner.java",
+          "line": 176,
+          "params": [
+            "Integer petId",
+            "Visit visit"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.setAllowedFields",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 60,
+          "params": [
+            "WebDataBinder dataBinder"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.findOwner",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 65,
+          "params": [
+            "@PathVariable(name = \"ownerId\", required = false) Integer ownerId"
+          ],
+          "returns": "Owner",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.initCreationForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 73,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.processCreationForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 78,
+          "params": [
+            "@Valid Owner owner",
+            "BindingResult result",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.initFindForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 90,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.processFindForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 95,
+          "params": [
+            "@RequestParam(defaultValue = \"1\") int page",
+            "Owner owner",
+            "BindingResult result",
+            "Model model",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.addPaginationModel",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 132,
+          "params": [
+            "int page",
+            "Model model",
+            "Page<Owner> paginated"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.findPaginatedForOwnersLastName",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 141,
+          "params": [
+            "int page",
+            "String lastname"
+          ],
+          "returns": "Page<Owner>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.initUpdateOwnerForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 149,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.processUpdateOwnerForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 154,
+          "params": [
+            "@Valid Owner owner",
+            "BindingResult result",
+            "@PathVariable(\"ownerId\") int ownerId",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "OwnerController.showOwner",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java",
+          "line": 179,
+          "params": [
+            "@PathVariable(\"ownerId\") int ownerId"
+          ],
+          "returns": "ModelAndView",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Pet.setBirthDate",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "line": 61,
+          "params": [
+            "LocalDate birthDate"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Pet.getBirthDate",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "line": 65,
+          "params": [],
+          "returns": "LocalDate",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Pet.getType",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "line": 69,
+          "params": [],
+          "returns": "PetType",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Pet.setType",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "line": 73,
+          "params": [
+            "PetType type"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Pet.getVisits",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "line": 77,
+          "params": [],
+          "returns": "Collection<Visit>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Pet.addVisit",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Pet.java",
+          "line": 81,
+          "params": [
+            "Visit visit"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.populatePetTypes",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 63,
+          "params": [],
+          "returns": "Collection<PetType>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.findOwner",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 68,
+          "params": [
+            "@PathVariable(\"ownerId\") int ownerId"
+          ],
+          "returns": "Owner",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.findPet",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 76,
+          "params": [
+            "@PathVariable(\"ownerId\") int ownerId",
+            "@PathVariable(name = \"petId\", required = false) Integer petId"
+          ],
+          "returns": "Pet",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.initOwnerBinder",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 90,
+          "params": [
+            "WebDataBinder dataBinder"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.initPetBinder",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 95,
+          "params": [
+            "WebDataBinder dataBinder"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.initCreationForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 101,
+          "params": [
+            "Owner owner",
+            "ModelMap model"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.processCreationForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 108,
+          "params": [
+            "Owner owner",
+            "@Valid Pet pet",
+            "BindingResult result",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.initUpdateForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 140,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.processUpdateForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 145,
+          "params": [
+            "Owner owner",
+            "@Valid Pet pet",
+            "BindingResult result",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.updatePetDetails",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 186,
+          "params": [
+            "Owner owner",
+            "Pet pet"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetController.isDuplicatePetNameViolation",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+          "line": 202,
+          "params": [
+            "DataIntegrityViolationException ex"
+          ],
+          "returns": "boolean",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetTypeFormatter.print",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+          "line": 46,
+          "params": [
+            "PetType petType",
+            "Locale locale"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetTypeFormatter.parse",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetTypeFormatter.java",
+          "line": 52,
+          "params": [
+            "String text",
+            "Locale locale"
+          ],
+          "returns": "PetType",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetValidator.validate",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+          "line": 39,
+          "params": [
+            "Object obj",
+            "Errors errors"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetValidator.supports",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+          "line": 65,
+          "params": [
+            "Class<?> clazz"
+          ],
+          "returns": "boolean",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Visit.getDate",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+          "line": 54,
+          "params": [],
+          "returns": "LocalDate",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Visit.setDate",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+          "line": 58,
+          "params": [
+            "LocalDate date"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Visit.getDescription",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+          "line": 62,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Visit.setDescription",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/Visit.java",
+          "line": 66,
+          "params": [
+            "String description"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VisitController.setAllowedFields",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+          "line": 52,
+          "params": [
+            "WebDataBinder dataBinder"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VisitController.loadPetWithVisit",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+          "line": 64,
+          "params": [
+            "@PathVariable(\"ownerId\") int ownerId",
+            "@PathVariable(\"petId\") int petId",
+            "Map<String, Object> model"
+          ],
+          "returns": "Visit",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VisitController.minVisitDate",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+          "line": 84,
+          "params": [],
+          "returns": "LocalDate",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VisitController.initNewVisitForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+          "line": 91,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VisitController.processNewVisitForm",
+          "file": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java",
+          "line": 98,
+          "params": [
+            "@ModelAttribute Owner owner",
+            "@PathVariable int petId",
+            "@Valid Visit visit",
+            "BindingResult result",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "Owner",
+          "fields": [
+            {
+              "name": "address",
+              "type": "String"
+            },
+            {
+              "name": "city",
+              "type": "String"
+            },
+            {
+              "name": "telephone",
+              "type": "String"
+            },
+            {
+              "name": "pets",
+              "type": "List<Pet>"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "jpa_entity",
+          "inherited_fields": "Ver data-dictionary.md: BaseEntity.id; Person.firstName/lastName ou NamedEntity.name conforme herança."
+        },
+        {
+          "name": "Pet",
+          "fields": [
+            {
+              "name": "birthDate",
+              "type": "LocalDate"
+            },
+            {
+              "name": "type",
+              "type": "PetType"
+            },
+            {
+              "name": "visits",
+              "type": "Set<Visit>"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "jpa_entity",
+          "inherited_fields": "Ver data-dictionary.md: BaseEntity.id; Person.firstName/lastName ou NamedEntity.name conforme herança."
+        },
+        {
+          "name": "PetType",
+          "fields": [],
+          "confidence": "confirmed",
+          "kind": "jpa_entity",
+          "inherited_fields": "Ver data-dictionary.md: BaseEntity.id; Person.firstName/lastName ou NamedEntity.name conforme herança."
+        },
+        {
+          "name": "Visit",
+          "fields": [
+            {
+              "name": "date",
+              "type": "LocalDate"
+            },
+            {
+              "name": "description",
+              "type": "String"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "jpa_entity",
+          "inherited_fields": "Ver data-dictionary.md: BaseEntity.id; Person.firstName/lastName ou NamedEntity.name conforme herança."
+        }
+      ],
+      "dependencies": [
+        "model"
+      ],
+      "complexity": "high",
+      "analysis_file": "_reversa_sdd/code-analysis.md",
+      "data_dictionary": "_reversa_sdd/data-dictionary.md"
+    },
+    {
+      "name": "vet",
+      "path": "src/main/java/org/springframework/samples/petclinic/vet",
+      "purpose": "Consulta de veterinários e especialidades",
+      "primary_files": [
+        "src/main/java/org/springframework/samples/petclinic/vet/Specialty.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/VetRepository.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+        "src/main/java/org/springframework/samples/petclinic/vet/package-info.java"
+      ],
+      "functions": [
+        {
+          "name": "Vet.getSpecialtiesInternal",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+          "line": 52,
+          "params": [],
+          "returns": "Set<Specialty>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Vet.getSpecialties",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+          "line": 60,
+          "params": [],
+          "returns": "List<Specialty>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Vet.getNrOfSpecialties",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+          "line": 66,
+          "params": [],
+          "returns": "int",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Vet.addSpecialty",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/Vet.java",
+          "line": 70,
+          "params": [
+            "Specialty specialty"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VetController.showVetList",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+          "line": 46,
+          "params": [
+            "@RequestParam(defaultValue = \"1\") int page",
+            "Model model",
+            "RedirectAttributes redirectAttributes"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VetController.addPaginationModel",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+          "line": 56,
+          "params": [
+            "int page",
+            "Page<Vet> paginated",
+            "Model model"
+          ],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VetController.findPaginated",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+          "line": 65,
+          "params": [
+            "int page"
+          ],
+          "returns": "Page<Vet>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Vets.getVetList",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/Vets.java",
+          "line": 36,
+          "params": [],
+          "returns": "List<Vet>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "VetController.showResourcesVetList",
+          "file": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java",
+          "line": 73,
+          "params": [],
+          "returns": "Vets",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "Vet",
+          "fields": [
+            {
+              "name": "specialties",
+              "type": "Set<Specialty>"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "jpa_entity",
+          "inherited_fields": "Ver data-dictionary.md: BaseEntity.id; Person.firstName/lastName ou NamedEntity.name conforme herança."
+        },
+        {
+          "name": "Specialty",
+          "fields": [],
+          "confidence": "confirmed",
+          "kind": "jpa_entity",
+          "inherited_fields": "Ver data-dictionary.md: BaseEntity.id; Person.firstName/lastName ou NamedEntity.name conforme herança."
+        },
+        {
+          "name": "Vets",
+          "fields": [
+            {
+              "name": "vets",
+              "type": "List<Vet>"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "transport_envelope"
+        }
+      ],
+      "dependencies": [
+        "model"
+      ],
+      "complexity": "low",
+      "analysis_file": "_reversa_sdd/code-analysis.md",
+      "data_dictionary": "_reversa_sdd/data-dictionary.md"
+    },
+    {
+      "name": "model",
+      "path": "src/main/java/org/springframework/samples/petclinic/model",
+      "purpose": "Campos e identidade compartilhados via herança JPA",
+      "primary_files": [
+        "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+        "src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java",
+        "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+        "src/main/java/org/springframework/samples/petclinic/model/package-info.java"
+      ],
+      "functions": [
+        {
+          "name": "BaseEntity.getId",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+          "line": 39,
+          "params": [],
+          "returns": "Integer",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "BaseEntity.setId",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+          "line": 43,
+          "params": [
+            "Integer id"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "BaseEntity.isNew",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/BaseEntity.java",
+          "line": 47,
+          "params": [],
+          "returns": "boolean",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "NamedEntity.getName",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java",
+          "line": 37,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "NamedEntity.setName",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java",
+          "line": 41,
+          "params": [
+            "String name"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "NamedEntity.toString",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/NamedEntity.java",
+          "line": 46,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Person.getFirstName",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+          "line": 41,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Person.setFirstName",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+          "line": 45,
+          "params": [
+            "String firstName"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Person.getLastName",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+          "line": 49,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "Person.setLastName",
+          "file": "src/main/java/org/springframework/samples/petclinic/model/Person.java",
+          "line": 53,
+          "params": [
+            "String lastName"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [
+        {
+          "name": "BaseEntity",
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "mapped_superclass"
+        },
+        {
+          "name": "NamedEntity",
+          "fields": [
+            {
+              "name": "name",
+              "type": "String"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "mapped_superclass"
+        },
+        {
+          "name": "Person",
+          "fields": [
+            {
+              "name": "firstName",
+              "type": "String"
+            },
+            {
+              "name": "lastName",
+              "type": "String"
+            }
+          ],
+          "confidence": "confirmed",
+          "kind": "mapped_superclass"
+        }
+      ],
+      "dependencies": [],
+      "complexity": "low",
+      "analysis_file": "_reversa_sdd/code-analysis.md",
+      "data_dictionary": "_reversa_sdd/data-dictionary.md"
+    },
+    {
+      "name": "system",
+      "path": "src/main/java/org/springframework/samples/petclinic/system",
+      "purpose": "Configuração de idioma, cache, boas-vindas e erro demonstrativo; inicialização transversal",
+      "primary_files": [
+        "src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java",
+        "src/main/java/org/springframework/samples/petclinic/system/CrashController.java",
+        "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+        "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+        "src/main/java/org/springframework/samples/petclinic/system/package-info.java",
+        "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+        "src/main/java/org/springframework/samples/petclinic/PetClinicRuntimeHints.java"
+      ],
+      "functions": [
+        {
+          "name": "CacheConfiguration.petclinicCacheConfigurationCustomizer",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java",
+          "line": 36,
+          "params": [],
+          "returns": "JCacheManagerCustomizer",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "CacheConfiguration.cacheConfiguration",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/CacheConfiguration.java",
+          "line": 49,
+          "params": [],
+          "returns": "javax.cache.configuration.Configuration<Object, Object>",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "CrashController.triggerException",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/CrashController.java",
+          "line": 32,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "WebConfiguration.localeResolver",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+          "line": 33,
+          "params": [],
+          "returns": "LocaleResolver",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "WebConfiguration.localeChangeInterceptor",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+          "line": 45,
+          "params": [],
+          "returns": "LocaleChangeInterceptor",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "WebConfiguration.addInterceptors",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+          "line": 56,
+          "params": [
+            "InterceptorRegistry registry"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "WelcomeController.welcome",
+          "file": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java",
+          "line": 26,
+          "params": [],
+          "returns": "String",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetClinicApplication.main",
+          "file": "src/main/java/org/springframework/samples/petclinic/PetClinicApplication.java",
+          "line": 32,
+          "params": [
+            "String[] args"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        },
+        {
+          "name": "PetClinicRuntimeHints.registerHints",
+          "file": "src/main/java/org/springframework/samples/petclinic/PetClinicRuntimeHints.java",
+          "line": 28,
+          "params": [
+            "RuntimeHints hints",
+            "ClassLoader classLoader"
+          ],
+          "returns": "void",
+          "confidence": "confirmed"
+        }
+      ],
+      "entities": [],
+      "dependencies": [
+        "vet",
+        "model"
+      ],
+      "algorithms": [],
+      "complexity": "low",
+      "analysis_file": "_reversa_sdd/code-analysis.md",
+      "data_dictionary": "_reversa_sdd/data-dictionary.md"
+    }
+  ]
+}

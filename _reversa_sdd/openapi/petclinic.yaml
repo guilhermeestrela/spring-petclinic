@@ -1,0 +1,1362 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Spring PetClinic — contratos extraídos",
+    "version": "extraction-1",
+    "description": "Extração estática em Português. 🟢 mappings/código; 🟡 representações/status inferidos; 🔴 lacunas. Aplicação MVC com formulários HTML, sem prometer CRUD JSON. Testes citados não executados. security não é declarado porque autenticação externa é desconhecida, não porque endpoints sejam comprovadamente públicos. Decisões do destino ficam separadas em x-user-validated-target; schemas/paths mantêm evidência do legado.",
+    "x-confidence": "mixed-explicit-per-operation"
+  },
+  "tags": [
+    {
+      "name": "responsaveis"
+    },
+    {
+      "name": "veterinarios"
+    },
+    {
+      "name": "sistema"
+    }
+  ],
+  "paths": {
+    "/owners/new": {
+      "get": {
+        "operationId": "OwnerController_get_owners_new",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/new",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:72",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/createOrUpdateOwnerForm"
+        ]
+      },
+      "post": {
+        "operationId": "OwnerController_post_owners_new",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 POST /owners/new",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:77",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/createOrUpdateOwnerForm"
+        ],
+        "requestBody": {
+          "required": false,
+          "description": "🟡 Encoding do formulário HTML. Não há consumes no mapping nem RequestBody obrigatório; campos/validação são do binding MVC, não allowlist de propriedades.",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/OwnerFormObserved"
+              }
+            }
+          },
+          "x-confidence": "inferred-encoding-confirmed-fields"
+        },
+        "x-redirects": [
+          "/owners/{id gerado}"
+        ]
+      }
+    },
+    "/owners/find": {
+      "get": {
+        "operationId": "OwnerController_get_owners_find",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/find",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:89",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/findOwners"
+        ]
+      }
+    },
+    "/owners": {
+      "get": {
+        "operationId": "OwnerController_get_owners",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            },
+            "description": "🟢 Página externa; consulta interna max(page,1)-1, tamanho 5, sem Sort. Faixa é testada após consulta; inválida redireciona page=1.",
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lastName",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "🟢 Prefixo; null vira vazio e outros valores recebem strip. Página válida vazia: formulário com notFound; total único: redirect detalhe; múltiplos: lista.",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:94",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/findOwners",
+          "owners/ownersList"
+        ],
+        "x-redirects": [
+          "/owners?page=1&lastName=<prefixo não vazio>",
+          "/owners/{id único}"
+        ]
+      }
+    },
+    "/owners/{ownerId}/edit": {
+      "get": {
+        "operationId": "OwnerController_get_owners_ownerId_edit",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/{ownerId}/edit",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:148",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/createOrUpdateOwnerForm"
+        ]
+      },
+      "post": {
+        "operationId": "OwnerController_post_owners_ownerId_edit",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 POST /owners/{ownerId}/edit",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:153",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/createOrUpdateOwnerForm"
+        ],
+        "requestBody": {
+          "required": false,
+          "description": "🟡 Encoding do formulário HTML. Não há consumes no mapping nem RequestBody obrigatório; campos/validação são do binding MVC, não allowlist de propriedades.",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/OwnerFormObserved"
+              }
+            }
+          },
+          "x-confidence": "inferred-encoding-confirmed-fields"
+        },
+        "x-redirects": [
+          "/owners/{ownerId}",
+          "/owners/{ownerId}/edit em mismatch interno"
+        ]
+      }
+    },
+    "/owners/{ownerId}": {
+      "get": {
+        "operationId": "OwnerController_get_owners_ownerId",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/{ownerId}",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/OwnerController.java:178",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "owners/ownerDetails"
+        ]
+      }
+    },
+    "/owners/{ownerId}/pets/new": {
+      "get": {
+        "operationId": "PetController_get_owners_ownerId_pets_new",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/{ownerId}/pets/new",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java:100",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "pets/createOrUpdatePetForm"
+        ],
+        "x-gaps": [
+          "D-01 se visita: date omitida/vazia",
+          "D-02 se pet: mensagem/collation de duplicidade por banco",
+          "D-06: pet ausente e falhas de conversão",
+          "D-03: acesso externo não confirmado"
+        ]
+      },
+      "post": {
+        "operationId": "PetController_post_owners_ownerId_pets_new",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 POST /owners/{ownerId}/pets/new",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java:107",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "pets/createOrUpdatePetForm"
+        ],
+        "requestBody": {
+          "required": false,
+          "description": "🟡 Encoding do formulário HTML. Não há consumes no mapping nem RequestBody obrigatório; campos/validação são do binding MVC, não allowlist de propriedades.",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PetFormObserved"
+              }
+            }
+          },
+          "x-confidence": "inferred-encoding-confirmed-fields"
+        },
+        "x-redirects": [
+          "/owners/{ownerId}"
+        ],
+        "x-gaps": [
+          "D-01 se visita: date omitida/vazia",
+          "D-02 se pet: mensagem/collation de duplicidade por banco",
+          "D-06: pet ausente e falhas de conversão",
+          "D-03: acesso externo não confirmado"
+        ]
+      }
+    },
+    "/owners/{ownerId}/pets/{petId}/edit": {
+      "get": {
+        "operationId": "PetController_get_owners_ownerId_pets_petId_edit",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/{ownerId}/pets/{petId}/edit",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java:139",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "pets/createOrUpdatePetForm"
+        ],
+        "x-gaps": [
+          "D-01 se visita: date omitida/vazia",
+          "D-02 se pet: mensagem/collation de duplicidade por banco",
+          "D-06: pet ausente e falhas de conversão",
+          "D-03: acesso externo não confirmado"
+        ]
+      },
+      "post": {
+        "operationId": "PetController_post_owners_ownerId_pets_petId_edit",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 POST /owners/{ownerId}/pets/{petId}/edit",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/PetController.java:144",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "pets/createOrUpdatePetForm"
+        ],
+        "requestBody": {
+          "required": false,
+          "description": "🟡 Encoding do formulário HTML. Não há consumes no mapping nem RequestBody obrigatório; campos/validação são do binding MVC, não allowlist de propriedades.",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/PetFormObserved"
+              }
+            }
+          },
+          "x-confidence": "inferred-encoding-confirmed-fields"
+        },
+        "x-redirects": [
+          "/owners/{ownerId}"
+        ],
+        "x-gaps": [
+          "D-01 se visita: date omitida/vazia",
+          "D-02 se pet: mensagem/collation de duplicidade por banco",
+          "D-06: pet ausente e falhas de conversão",
+          "D-03: acesso externo não confirmado"
+        ]
+      }
+    },
+    "/owners/{ownerId}/pets/{petId}/visits/new": {
+      "get": {
+        "operationId": "VisitController_get_owners_ownerId_pets_petId_visits_new",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 GET /owners/{ownerId}/pets/{petId}/visits/new",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java:90",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "pets/createOrUpdateVisitForm"
+        ],
+        "x-gaps": [
+          "D-01 se visita: date omitida/vazia",
+          "D-02 se pet: mensagem/collation de duplicidade por banco",
+          "D-06: pet ausente e falhas de conversão",
+          "D-03: acesso externo não confirmado"
+        ]
+      },
+      "post": {
+        "operationId": "VisitController_post_owners_ownerId_pets_petId_visits_new",
+        "tags": [
+          "responsaveis"
+        ],
+        "summary": "🟢 POST /owners/{ownerId}/pets/{petId}/visits/new",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "ownerId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "🟢 Identificador de rota Integer/int; positividade e existência não são garantidas pelo tipo.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/owner/VisitController.java:97",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "pets/createOrUpdateVisitForm"
+        ],
+        "requestBody": {
+          "required": false,
+          "description": "🟡 Encoding do formulário HTML. Não há consumes no mapping nem RequestBody obrigatório; campos/validação são do binding MVC, não allowlist de propriedades.",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/VisitFormObserved"
+              }
+            }
+          },
+          "x-confidence": "inferred-encoding-confirmed-fields"
+        },
+        "x-redirects": [
+          "/owners/{ownerId}"
+        ],
+        "x-gaps": [
+          "D-01 se visita: date omitida/vazia",
+          "D-02 se pet: mensagem/collation de duplicidade por banco",
+          "D-06: pet ausente e falhas de conversão",
+          "D-03: acesso externo não confirmado"
+        ]
+      }
+    },
+    "/vets.html": {
+      "get": {
+        "operationId": "VetController_get_vets_html",
+        "tags": [
+          "veterinarios"
+        ],
+        "summary": "🟢 GET /vets.html",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            },
+            "description": "🟢 Página externa; consulta interna max(page,1)-1, tamanho 5, sem Sort. Faixa é testada após consulta; inválida redireciona page=1.",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          },
+          "3XX": {
+            "description": "🟢 O handler retorna redirect; 🟡 status 3xx conforme MVC/testes. Código exato e headers efetivos não capturados.",
+            "headers": {
+              "Location": {
+                "description": "🟡 Destino esperado a partir do redirect; resolução efetiva depende do MVC.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java:45",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "vets/vetList"
+        ],
+        "x-redirects": [
+          "/vets.html?page=1"
+        ]
+      }
+    },
+    "/vets": {
+      "get": {
+        "operationId": "VetController_get_vets",
+        "tags": [
+          "veterinarios"
+        ],
+        "summary": "🟢 GET /vets",
+        "description": "🟢 @ResponseBody Vets com todos os resultados de findAll(), sem Pageable e sem limite no handler. Teste declara JSON/200 e $.vetList[0].id=1; não executado. 🔴 Shape completo, XML e outros Accept pendentes (VET-D-01).",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟢 Expectativa JSON do teste com mock; execução pendente. Schema parcial aberto, sem garantia de conjunto completo de propriedades.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VetsObservedPartial"
+                }
+              }
+            },
+            "x-confidence": "test-expectation-not-executed"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/vet/VetController.java:72",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false
+      }
+    },
+    "/oups": {
+      "get": {
+        "operationId": "CrashController_get_oups",
+        "tags": [
+          "sistema"
+        ],
+        "summary": "🟢 GET /oups",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "🟢 Esperado por CrashControllerIntegrationTests SOMENTE no contexto com include-message=ALWAYS; teste não executado aqui. Conteúdo de produção desconhecido.",
+            "x-test-context": {
+              "spring.web.error.include-message": "ALWAYS",
+              "management.endpoints.access.default": "none"
+            },
+            "x-test-assertions": {
+              "json": [
+                "timestamp presente",
+                "status presente",
+                "error presente",
+                "message igual à mensagem demonstrativa",
+                "path=/oups"
+              ],
+              "html": [
+                "título Something happened...",
+                "mensagem demonstrativa",
+                "sem Whitelabel Error Page"
+              ]
+            },
+            "x-confidence": "test-expectation-not-executed"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/system/CrashController.java:31",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-thrown-exception": "RuntimeException: Expected: controller used to showcase what happens when an exception is thrown"
+      }
+    },
+    "/": {
+      "get": {
+        "operationId": "WelcomeController_get_",
+        "tags": [
+          "sistema"
+        ],
+        "summary": "🟢 GET /",
+        "description": "🟢 Mapping extraído do código. 🟡 Representação/status normais derivados de views e expectativas dos testes. 🔴 Erros e media types não observados permanecem lacunas.",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "description": "🟢 Parâmetro do LocaleChangeInterceptor global, com locale de sessão e padrão inglês. 🔴 Idioma inválido/fallback não caracterizados.",
+            "schema": {
+              "type": "string"
+            },
+            "x-source": "src/main/java/org/springframework/samples/petclinic/system/WebConfiguration.java",
+            "x-confidence": "confirmed"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "🟡 View HTML do fluxo normal ou do formulário com erros. Status 200 esperado nos testes pertinentes, não executados aqui.",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "x-confidence": "inferred"
+          },
+          "default": {
+            "description": "🔴 Falha/conversão/representação não caracterizada. Não há envelope ou status de erro de negócio universal definido pelos handlers.",
+            "x-confidence": "unknown"
+          }
+        },
+        "x-source": "src/main/java/org/springframework/samples/petclinic/system/WelcomeController.java:25",
+        "x-confidence": "confirmed-mapping",
+        "x-runtime-verified": false,
+        "x-views": [
+          "welcome"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OwnerFormObserved": {
+        "type": "object",
+        "description": "🟢 Campos usuais do template; Bean Validation @NotBlank e limites declarados. Não é DTO JSON nem allowlist de binding.",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "🟢 NotBlank"
+          },
+          "lastName": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "🟢 NotBlank"
+          },
+          "address": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "🟢 NotBlank"
+          },
+          "city": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "🟢 NotBlank"
+          },
+          "telephone": {
+            "type": "string",
+            "description": "🟢 NotBlank; padrão Java de 10 dígitos, sem normalização"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName",
+          "address",
+          "city",
+          "telephone"
+        ],
+        "additionalProperties": true,
+        "x-bind-disallowed": [
+          "id",
+          "*.id"
+        ]
+      },
+      "PetFormObserved": {
+        "type": "object",
+        "description": "🟢 Campos do formulário; tipo exigido por PetValidator apenas em novo. Regras condicionais não foram convertidas em obrigatoriedade universal.",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "🟢 hasText; sem strip; unicidade por owner ignorando caixa na aplicação."
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date",
+            "description": "🟢 yyyy-MM-dd, obrigatório e não futuro."
+          },
+          "type": {
+            "type": "string",
+            "description": "🟢 Nome exato do PetType, não ID. Obrigatório em novo; ausente em edição depende de binding/SQL."
+          },
+          "id": {
+            "type": "string",
+            "description": "🟢 Hidden presente no template, bloqueado no binder; não é ID de edição confiável."
+          }
+        },
+        "required": [
+          "name",
+          "birthDate"
+        ],
+        "additionalProperties": true,
+        "x-create-required": [
+          "type"
+        ],
+        "x-bind-disallowed": [
+          "id",
+          "*.id"
+        ]
+      },
+      "VisitFormObserved": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "description": "🔴 Não resolve obrigatoriedade HTTP: construtor inicia amanhã; @NotNull ausente e regra temporal ignora null. Valor informado deve ser posterior a hoje; omitido/vazio não caracterizado.",
+            "x-confidence": "unknown-external-nullability"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 255,
+            "description": "🟢 NotBlank, Size max 255."
+          },
+          "petId": {
+            "type": "string",
+            "description": "🟢 Hidden no template; associação do handler vem do PathVariable, não deste campo."
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": true,
+        "x-bind-disallowed": [
+          "id",
+          "*.id"
+        ],
+        "x-gaps": [
+          "D-01",
+          "D-05"
+        ]
+      },
+      "VetsObservedPartial": {
+        "type": "object",
+        "description": "🟢 Teste afirma vetList[0].id; 🔴 schema completo não caracterizado. Não é contrato fechado de campos/required.",
+        "properties": {
+          "vetList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true,
+        "x-schema-completeness": "partial",
+        "x-runtime-verified": false
+      }
+    }
+  },
+  "x-extraction": {
+    "runtimeVerified": false,
+    "sourceRoot": "src/main/java/org/springframework/samples/petclinic",
+    "format": "JSON, subconjunto válido de YAML 1.2; sem dependência de parser YAML externo",
+    "scope": "17 operações próprias dos controllers; recursos estáticos, Actuator, error framework e probes não são mappings próprios adicionais inventados.",
+    "servers": "Não fixado: ambiente e porta podem variar.",
+    "validation": "Sintaxe JSON/YAML-subset, refs locais, parâmetros de rota e equivalência de mappings; não é validação por ferramenta OpenAPI externa.",
+    "gaps": [
+      "D-01",
+      "D-02",
+      "D-03",
+      "D-04",
+      "D-05",
+      "D-06",
+      "VET-D-01",
+      "VET-D-02",
+      "SIS-D-03",
+      "SIS-D-04"
+    ]
+  },
+  "x-user-validated-target": {
+    "source": "../validated-decisions.md",
+    "processedAt": "2026-11-09T23:33:55.027602+00:00",
+    "database": "PostgreSQL only",
+    "network": "local network per user, external ACL not verified",
+    "businessTimezone": "America/Sao_Paulo",
+    "languages": [
+      "pt",
+      "en"
+    ],
+    "visitDate": "required and strictly future; current binding not changed",
+    "veterinarianOrder": {
+      "mode": "alphabetical",
+      "fieldsAndTieBreak": "not specified"
+    },
+    "errors": "generic UI page without internal details; API statuses unspecified",
+    "cachePolicy": "none defined; do not infer cache disabled",
+    "historicalDataMigrationRequired": false,
+    "deployment": "Kubernetes; Docker for local development if feasible",
+    "consumerScope": "application only; remove unnecessary fields only after usage verification",
+    "runtimeImplemented": false
+  }
+}
